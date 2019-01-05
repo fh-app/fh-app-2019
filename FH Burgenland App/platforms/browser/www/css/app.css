@@ -1,0 +1,13 @@
+/* Your app styles here */
+.ios .tabbar-labels .tab-link:not(.tab-link-active) .icon-ios-fill {
+  display: none;
+}
+.ios .tabbar-labels .tab-link.tab-link-active .icon:not(.icon-ios-fill) {
+  display: none;
+}
+
+/* Icons */
+.size-14 { font-size: 14px }
+.size-28 { font-size: 28px }
+.size-32 { font-size: 32px }
+.size-56 { font-size: 56px }
