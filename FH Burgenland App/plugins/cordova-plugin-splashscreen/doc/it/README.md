@@ -29,7 +29,7 @@ Questo plugin Visualizza e nasconde una schermata iniziale durante l'avvio dell'
     cordova plugin add cordova-plugin-splashscreen
     // you may also install directly from this repo
     cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
-    
+
 
 ## Piattaforme supportate
 
@@ -54,7 +54,7 @@ Nel vostro `config. XML`, è necessario aggiungere le seguenti preferenze:
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
-    
+
 
 Dove foo è il nome del file splashscreen, preferibilmente un file 9 patch. Assicurati di aggiungere i tuoi file splashcreen res/xml nella directory sotto cartelle appropriate. Il secondo parametro rappresenta quanto tempo lo splashscreen apparirà in millisecondi. Il valore predefinito è 3000 ms. Per ulteriori informazioni, vedere [icone e schermate iniziali](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html).
 
@@ -67,38 +67,38 @@ Il plugin viene ricaricata splash drawable ogni volta che cambia orientamento, �
 Nel vostro `config. XML`, è possibile utilizzare le seguenti preferenze:
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "images/fhapp-logo-128.png" -->
         <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
         <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
-    
+
 
 ### iOS stranezze
 
   * `FadeSplashScreen` (boolean, impostazioni predefinite a `true`): impostare su `false` per impedire che la schermata iniziale e scompaiono quando cambia il relativo stato di visualizzazione.
-    
+
         <preference name="FadeSplashScreen" value="false"/>
-        
+
 
   * `FadeSplashScreenDuration` (float, il valore predefinito è `2`): specifica il numero di secondi per la schermata iniziale dissolvenza effetto da eseguire.
-    
+
         <preference name="FadeSplashScreenDuration" value="4"/>
-        
+
 
   * `ShowSplashScreenSpinner` (boolean, impostazioni predefinite a `true`): impostare su `false` per nascondere la filatrice schermata iniziale.
-    
+
         <preference name="ShowSplashScreenSpinner" value="false"/>
-        
+
 
 ## splashscreen.Hide
 
 Respingere la schermata iniziale.
 
     navigator.splashscreen.hide();
-    
+
 
 ### BlackBerry 10, WP8, iOS Quirk
 
@@ -107,13 +107,13 @@ Impostazione `AutoHideSplashScreen` del file `config.xml` deve essere `false`. P
         setTimeout(function() {
             navigator.splashscreen.hide();
         }, 2000);
-    
+
 
 ## splashscreen
 
 Visualizza la schermata iniziale.
 
     navigator.splashscreen.show();
-    
+
 
 L'applicazione non può chiamare `navigator.splashscreen.show()` fino a quando l'app ha iniziato e ha generato l'evento `deviceready`. Ma poiché in genere la schermata iniziale è destinata ad essere visibile prima app ha iniziato, che sembrerebbe per sconfiggere lo scopo della schermata iniziale. Fornendo qualche configurazione nel `file config.xml` sarà automaticamente `show` il tonfo schermo subito dopo il lancio dell'app e prima che completamente ha iniziato e ha ricevuto l'evento `deviceready`. Per ulteriori informazioni su facendo questa configurazione, vedere [icone e schermate iniziali](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html). Per questo motivo, è improbabile che dovete chiamare `navigator.splashscreen.show()` per rendere la schermata visibile per avvio di app.

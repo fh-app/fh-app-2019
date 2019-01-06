@@ -436,7 +436,7 @@ To use `cdvfile` as a tag' `src` you can convert it to native path via `toURL()`
 
 You can also use `cdvfile://` paths directly in the DOM, for example:
 ```HTML
-<img src="cdvfile://localhost/persistent/img/logo.png" />
+<img src="cdvfile://localhost/persistent/images/fhapp-logo-128.png" />
 ```
 
 __Note__: This method requires following Content Security rules updates:

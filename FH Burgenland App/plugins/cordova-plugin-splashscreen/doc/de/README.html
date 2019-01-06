@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
+-->
+
+<h1 id="cordova-plugin-splashscreen">cordova-plugin-splashscreen</h1>
+
+<p><a href="https://travis-ci.org/apache/cordova-plugin-splashscreen"><img src="https://travis-ci.org/apache/cordova-plugin-splashscreen.svg" alt="Build Status" /></a></p>
+
+<p>Dieses Plugin zeigt und verbirgt einen Splash-Screen beim Start der Anwendung.</p>
+
+<h2 id="installation">Installation</h2>
+
+<pre><code>// npm hosted (new) id
+cordova plugin add cordova-plugin-splashscreen
+// you may also install directly from this repo
+cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
+</code></pre>
+
+<h2 id="unterstützteplattformen">Unterstützte Plattformen</h2>
+
+<ul>
+<li> Amazon Fire OS</li>
+<li> Android</li>
+<li> BlackBerry 10</li>
+<li> iOS</li>
+<li> Windows Phone 7 und 8</li>
+<li> Windows 8</li>
+<li> Windows</li>
+<li> Browser</li>
+</ul>
+
+<h2 id="methoden">Methoden</h2>
+
+<ul>
+<li> SplashScreen.Show</li>
+<li> SplashScreen.Hide</li>
+</ul>
+
+<h3 id="androideigenarten">Android Eigenarten</h3>
+
+<p>Sie müssen in Ihrem <code>&quot;config.xml&quot;</code>fügen Sie die folgenden Einstellungen:</p>
+
+<pre><code>&lt;preference name=&quot;SplashScreen&quot; value=&quot;foo&quot; /&gt;
+&lt;preference name=&quot;SplashScreenDelay&quot; value=&quot;10000&quot; /&gt;
+&lt;preference name=&quot;SplashMaintainAspectRatio&quot; value=&quot;true|false&quot; /&gt;
+</code></pre>
+
+<p>Wo Foo ist der Name der Datei Splashscreen, vorzugsweise eine 9-Patch-Datei. Stellen Sie sicher, Splashcreen Dateien zu Ihrem res/xml-Verzeichnis unter den entsprechenden Ordnern hinzuzufügen. Der zweite Parameter stellt dar, wie lange das Splashscreen in Millisekunden angezeigt werden. Es wird standardmäßig auf 3000 ms. Weitere Informationen finden Sie unter <a href="http://cordova.apache.org/docs/en/edge/config_ref_images.md.html">Symbole und Splash-Screens</a>.</p>
+
+<p>&#8220;SplashMaintainAspectRatio&#8221; Präferenz ist optional. Wenn wahr, Splash-Screen zeichenbaren nicht gestreckt wird, um den Bildschirm passen, sondern stattdessen einfach &#8220;&#8221; den Bildschirm, wie CSS abdeckt &#8220;Hintergrund-Größe: Schutz vor&#8221;. Dies ist sehr nützlich, wenn Splash-Bildschirm Bilder können nicht, in keiner Weise, zum Beispiel verzerrt werden wenn sie Landschaft oder Text enthalten. Diese Einstellung funktioniert am besten mit Bildern, die große Margen (sichere Bereiche) haben, die sicher auf Bildschirme mit unterschiedlichen Seitenverhältnissen zugeschnitten werden können.</p>
+
+<p>Das Plugin lädt platsch zeichenbaren wenn Ausrichtung ändert, sodass Sie verschiedene Drawables für hoch- und Querformat Ausrichtungen angeben können.</p>
+
+<h3 id="browser-eigenheiten">Browser-Eigenheiten</h3>
+
+<p>In Ihrem <code>&quot;config.xml&quot;</code>können Sie die folgenden Einstellungen:</p>
+
+<pre><code>&lt;platform name=&quot;browser&quot;&gt;
+    &lt;preference name=&quot;SplashScreen&quot; value=&quot;images/browser/splashscreen.jpg&quot; /&gt; &lt;!-- defaults to &quot;images/fhapp-logo-128.png&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenDelay&quot; value=&quot;10000&quot; /&gt; &lt;!-- defaults to &quot;3000&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenBackgroundColor&quot; value=&quot;green&quot; /&gt; &lt;!-- defaults to &quot;#464646&quot; --&gt;
+    &lt;preference name=&quot;ShowSplashScreen&quot; value=&quot;false&quot; /&gt; &lt;!-- defaults to &quot;true&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenWidth&quot; value=&quot;600&quot; /&gt; &lt;!-- defaults to &quot;170&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenHeight&quot; value=&quot;300&quot; /&gt; &lt;!-- defaults to &quot;200&quot; --&gt;
+&lt;/platform&gt;
+</code></pre>
+
+<h3 id="iosmacken">iOS Macken</h3>
+
+<ul>
+<li><p> <code>FadeSplashScreen</code> (Boolean, standardmäßig auf <code>true festgelegt</code>): um zu verhindern, dass den Begrüßungsbildschirm ein-und ausblenden bei ihrer Anzeige Statusänderungen auf <code>false</code> festgelegt.</p>
+
+<pre><code>&lt;preference name=&quot;FadeSplashScreen&quot; value=&quot;false&quot;/&gt;
+</code></pre></li>
+<li><p> <code>FadeSplashScreenDuration</code> (float, Standardwert ist <code>2</code>): gibt die Anzahl der Sekunden für den Begrüßungsbildschirm fade Effekt ausgeführt.</p>
+
+<pre><code>&lt;preference name=&quot;FadeSplashScreenDuration&quot; value=&quot;4&quot;/&gt;
+</code></pre></li>
+<li><p> <code>ShowSplashScreenSpinner</code> (Boolean, standardmäßig auf <code>true festgelegt</code>): auf <code>false</code> festgelegt wird, um den Begrüßungsbildschirm Spinner auszublenden.</p>
+
+<pre><code>&lt;preference name=&quot;ShowSplashScreenSpinner&quot; value=&quot;false&quot;/&gt;
+</code></pre></li>
+</ul>
+
+<h2 id="splashscreen.hide">SplashScreen.Hide</h2>
+
+<p>Schließen Sie den Splash-Screen.</p>
+
+<pre><code>navigator.splashscreen.hide();
+</code></pre>
+
+<h3 id="blackberry10wp8ioseigenarten">BlackBerry 10, WP8, iOS Eigenarten</h3>
+
+<p>Die Datei <code>config.xml</code> <code>AutoHideSplashScreen</code> Einstellung muss <code>false</code> sein. Verstecken des Begrüßungsbildschirms für zwei Sekunden Verzögerung, fügen Sie einen Timer wie die folgende in der <code>deviceready</code>-Ereignishandler:</p>
+
+<pre><code>    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 2000);
+</code></pre>
+
+<h2 id="splashscreen.show">SplashScreen.Show</h2>
+
+<p>Zeigt den Begrüßungsbildschirm.</p>
+
+<pre><code>navigator.splashscreen.show();
+</code></pre>
+
+<p>Ihre Anwendung kann nicht <code>navigator.splashscreen.show()</code> aufrufen, bis die app begonnen hat und das <code>deviceready</code>-Ereignis ausgelöst hat. Aber da in der Regel der Splash-Screen soll sichtbar sein, bevor die Anwendung gestartet wurde, scheint die Niederlage der Zweck des Begrüßungsbildschirms. Somit einige Konfiguration in der Datei <code>config.xml</code> werden automatisch die Splash <code>show</code> sofort nach Ihrer app-Start und Bildschirm bevor es voll begonnen hat, und das <code>deviceready</code>-Ereignis empfangen. Weitere Informationen zu dieser Konfiguration finden Sie unter <a href="http://cordova.apache.org/docs/en/edge/config_ref_images.md.html">Symbole und Splash-Screens</a>. Aus diesem Grund ist es unwahrscheinlich, dass Sie <code>navigator.splashscreen.show()</code> damit den Splash-Screen sichtbar ist für app-Start aufrufen müssen.</p>
+
+</body>
+</html>
+

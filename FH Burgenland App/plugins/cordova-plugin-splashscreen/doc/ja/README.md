@@ -29,7 +29,7 @@
     cordova plugin add cordova-plugin-splashscreen
     // you may also install directly from this repo
     cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
-    
+
 
 ## サポートされているプラットフォーム
 
@@ -54,7 +54,7 @@
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
-    
+
 
 Foo ができれば 9 パッチファイル splashscreen ファイルの名前です。 解像度/xml ディレクトリの適切なフォルダーの下に splashcreen ファイルを追加することを確認します。 2 番目のパラメーターは、スプラッシュ ・ スクリーンがの表示時間 (ミリ秒単位) を表します。 デフォルトでは 3000 ミリ秒です。 詳細については、[アイコンとスプラッシュ画面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html) を参照してください。
 
@@ -67,38 +67,38 @@ Foo ができれば 9 パッチファイル splashscreen ファイルの名前�
 あなたの`config.xml`で次の設定を使用できます。
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "images/fhapp-logo-128.png" -->
         <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
         <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
-    
+
 
 ### iOS の癖
 
   * `FadeSplashScreen`(ブール値、既定で [ `true`): スプラッシュ画面がフェードインとフェードアウトの表示状態が変更されたときすることを防ぐために`false`に設定します。
-    
+
         <preference name="FadeSplashScreen" value="false"/>
-        
+
 
   * `FadeSplashScreenDuration`(float, デフォルトは`2`): スプラッシュ画面の秒数のフェードを実行する効果を指定します。
-    
+
         <preference name="FadeSplashScreenDuration" value="4"/>
-        
+
 
   * `ShowSplashScreenSpinner`(ブール値、既定で [ `true`): スプラッシュ スクリーン スピナーを非表示にするを`false`に設定します。
-    
+
         <preference name="ShowSplashScreenSpinner" value="false"/>
-        
+
 
 ## splashscreen.hide
 
 スプラッシュ スクリーンを閉じます。
 
     navigator.splashscreen.hide();
-    
+
 
 ### ブラックベリー 10、WP8、iOS の気まぐれ
 
@@ -107,13 +107,13 @@ Foo ができれば 9 パッチファイル splashscreen ファイルの名前�
         setTimeout(function() {
             navigator.splashscreen.hide();
         }, 2000);
-    
+
 
 ## splashscreen.show
 
 スプラッシュ画面が表示されます。
 
     navigator.splashscreen.show();
-    
+
 
 アプリが開始され、`deviceready` イベントが発生するまで、アプリケーションは `navigator.splashscreen.show()` を呼び出すことはできません。 しかし、以来、通常スプラッシュ画面アプリ開始前に表示するものですと思われる、スプラッシュ スクリーンの目的の敗北します。 `config.xml` にいくつかの構成を提供するは自動的に `表示` スプラッシュ画面、アプリを起動後すぐに、それが完全に起動し、`deviceready` イベントを受信する前に。 詳細についてはこの構成を行うには、[アイコンとスプラッシュ画面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html) を参照してください。 この理由のためにアプリ起動時のスプラッシュ スクリーンを確認 `navigator.splashscreen.show()` をコールする必要がある可能性が高いです。

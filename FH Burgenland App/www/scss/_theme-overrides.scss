@@ -1,0 +1,17 @@
+.ios {
+	.navbar {
+		color: white;
+		background-color: $colMain;
+		font-size: 3em;
+
+		a {
+			color: white;
+		}
+	}
+
+	.button,
+	.button.button-fill {
+		background-color: $colMain;
+		border: 1px solid $colMain;
+	}
+}

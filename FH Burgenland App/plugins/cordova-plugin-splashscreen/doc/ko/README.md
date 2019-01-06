@@ -29,7 +29,7 @@
     cordova plugin add cordova-plugin-splashscreen
     // you may also install directly from this repo
     cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
-    
+
 
 ## 지원 되는 플랫폼
 
@@ -54,7 +54,7 @@
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
-    
+
 
 여기서 foo splashscreen 파일, 선호 9 패치 파일의 이름입니다. 적절 한 폴더 아래 res/xml 디렉토리에 splashcreen 파일을 추가 해야 합니다. 두 번째 매개 변수는 splashscreen 얼마나 밀리초 단위로 표시 됩니다 나타냅니다. 3000 ms 기본값으로 사용 됩니다. 자세한 내용은 [아이콘 및 시작 화면을](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html) 참조 하십시오.
 
@@ -67,38 +67,38 @@
 `Config.xml`에 다음 기본 설정을 사용할 수 있습니다.
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "images/fhapp-logo-128.png" -->
         <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
         <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
-    
+
 
 ### iOS 단점
 
   * `FadeSplashScreen` (부울 `true`로 기본값): 시작 화면 표시 상태로 변경 될 때 밖으로 퇴색 하지 않도록 하려면 `false` 로 설정.
-    
+
         <preference name="FadeSplashScreen" value="false"/>
-        
+
 
   * `FadeSplashScreenDuration` (부동, `2`기본값): 시작 화면에 대 한 초 페이드 효과를 실행 하는 지정 합니다.
-    
+
         <preference name="FadeSplashScreenDuration" value="4"/>
-        
+
 
   * `ShowSplashScreenSpinner` (부울 `true`로 기본값): 스플래시 화면 회전자를 숨기려면 `false` 로 설정.
-    
+
         <preference name="ShowSplashScreenSpinner" value="false"/>
-        
+
 
 ## splashscreen.hide
 
 시작 화면을 닫습니다.
 
     navigator.splashscreen.hide();
-    
+
 
 ### 블랙베리 10, WP8, iOS 특질
 
@@ -107,13 +107,13 @@
         setTimeout(function() {
             navigator.splashscreen.hide();
         }, 2000);
-    
+
 
 ## splashscreen.show
 
 시작 화면을 표시합니다.
 
     navigator.splashscreen.show();
-    
+
 
 응용 프로그램 시작 및 `deviceready` 이벤트는 발생 될 때까지 응용 프로그램이 `navigator.splashscreen.show()`을 호출할 수 없습니다. 하지만 그 스플래시 스크린의 목적 것 같다 일반적으로 시작 화면이 당신의 애플 리 케이 션 시작 하기 전에 표시 될 운명이 다, 이후. `config.xml에서` 몇 가지 구성을 제공 하 자동으로 스플래시 `표시` 화면 애플 리 케이 션 출시 직후와 그것은 완벽 하 게 시작 하 고 `deviceready` 이벤트를 받은 전에. 이 구성 하 고 자세한 내용은 [아이콘 및 시작 화면을](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html) 참조 하십시오. 이러한 이유로, 그것은 가능성이 시작 화면은 응용 프로그램 시작에 대 한 표시 되도록 `navigator.splashscreen.show()`를 호출 해야입니다.

@@ -29,7 +29,7 @@
     cordova plugin add cordova-plugin-splashscreen
     // you may also install directly from this repo
     cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
-    
+
 
 ## 支援的平臺
 
@@ -54,7 +54,7 @@
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
-    
+
 
 美孚在哪裡閃屏檔，最好是 9 修補程式檔的名稱。 請確保您的 splashcreen 檔添加到 res/xml 目錄下相應的資料夾。 第二個參數表示多久閃屏會顯示以毫秒為單位。 它將預設為 3000 毫秒。 有關更多資訊，請參見 [圖示和啟動畫面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html)。
 
@@ -67,38 +67,38 @@
 你可以用你的`config.xml`下列優先選項:
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "images/fhapp-logo-128.png" -->
         <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
         <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
-    
+
 
 ### iOS 的怪癖
 
   * `FadeSplashScreen`(預設為`true`的布林值): 設置為`false` ，以防止出現閃屏衰落和退出其顯示狀態發生變化時。
-    
+
         <preference name="FadeSplashScreen" value="false"/>
-        
+
 
   * `FadeSplashScreenDuration`(float，預設為`2`): 指定的閃屏秒數淡出效果來執行。
-    
+
         <preference name="FadeSplashScreenDuration" value="4"/>
-        
+
 
   * `ShowSplashScreenSpinner`(boolean, `true`的布林值): 設置為`false`來隱藏初始螢幕微調框。
-    
+
         <preference name="ShowSplashScreenSpinner" value="false"/>
-        
+
 
 ## splashscreen.hide
 
 解雇的閃屏。
 
     navigator.splashscreen.hide();
-    
+
 
 ### 黑莓 10，WP8，iOS 怪癖
 
@@ -107,13 +107,13 @@
         setTimeout(function() {
             navigator.splashscreen.hide();
         }, 2000);
-    
+
 
 ## splashscreen.show
 
 顯示初始螢幕。
 
     navigator.splashscreen.show();
-    
+
 
 您的應用程式無法調用 `navigator.splashscreen.show()`，直到該應用程式已啟動，且觸發了 `deviceready` 事件。 但是，由於通常的閃屏為了是可見的在您的應用程式啟動之前，這似乎會打敗閃屏的目的。 提供一些配置在 `config.xml` 中的會自動 `show` 初始螢幕您的應用程式啟動後立即和之前它已經完全起步並收到 `deviceready` 事件。 做這種配置的詳細資訊，請參閱 [圖示和啟動畫面](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html)。 出於此原因，不太可能您需要調用 `navigator.splashscreen.show()`，使初始螢幕可見為應用程式啟動。

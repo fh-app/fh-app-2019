@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
+-->
+
+<h1 id="cordova-plugin-splashscreen">cordova-plugin-splashscreen</h1>
+
+<p><a href="https://travis-ci.org/apache/cordova-plugin-splashscreen"><img src="https://travis-ci.org/apache/cordova-plugin-splashscreen.svg" alt="Build Status" /></a></p>
+
+<p>Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.</p>
+
+<h2 id="instalacja">Instalacja</h2>
+
+<pre><code>// npm hosted (new) id
+cordova plugin add cordova-plugin-splashscreen
+// you may also install directly from this repo
+cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
+</code></pre>
+
+<h2 id="obsługiwaneplatformy">Obsługiwane platformy</h2>
+
+<ul>
+<li> Amazon Fire OS</li>
+<li> Android</li>
+<li> BlackBerry 10</li>
+<li> iOS</li>
+<li> Windows Phone 7 i 8</li>
+<li> Windows 8</li>
+<li> Windows</li>
+<li> Przeglądarka</li>
+</ul>
+
+<h2 id="metody">Metody</h2>
+
+<ul>
+<li> splashscreen.show</li>
+<li> splashscreen.Hide</li>
+</ul>
+
+<h3 id="dziwactwaandroida">Dziwactwa Androida</h3>
+
+<p>W pliku <code>config.xml</code>musisz dodać następujące preferencje:</p>
+
+<pre><code>&lt;preference name=&quot;SplashScreen&quot; value=&quot;foo&quot; /&gt;
+&lt;preference name=&quot;SplashScreenDelay&quot; value=&quot;10000&quot; /&gt;
+&lt;preference name=&quot;SplashMaintainAspectRatio&quot; value=&quot;true|false&quot; /&gt;
+</code></pre>
+
+<p>Gdzie foo jest nazwą pliku ekranu powitalnego, najlepiej 9 łatce. Upewnij się dodać pliki splashcreen do katalogu res/xml w odpowiednich folderach. Drugi parametr reprezentuje, jak długo ekranu powitalnego pojawi się w milisekundach. Domyślnie 3000 ms. Aby uzyskać więcej informacji, zobacz <a href="http://cordova.apache.org/docs/en/edge/config_ref_images.md.html">ikony i ekrany powitalne w aplikacjach</a>.</p>
+
+<p>&#8220;SplashMaintainAspectRatio&#8221; preferencji jest opcjonalne. Jeśli zestaw na wartość true, ekran powitalny dolarowe nie jest rozciągnięty do ekranów, ale zamiast po prostu &#8220;obejmuje&#8221; ekranu, jak CSS &#8220;tło-rozmiar: okładka&#8221;. Jest to bardzo przydatne, kiedy opryskać tęcza obrazy nie zniekształcony w jakikolwiek sposób, na przykład, gdy zawierają one dekoracje lub tekst. To ustawienie działa najlepiej z obrazów, które mają duże marginesy (bezpiecznych obszarów), które mogą być bezpiecznie przycięte na ekrany z różnych proporcji.</p>
+
+<p>Plugin ładuje rozchlapać dolarowe, gdy zmienia orientację, tak można określić różnych drawables do orientacji pionowej i poziomej.</p>
+
+<h3 id="quirksprzeglądarki">Quirks przeglądarki</h3>
+
+<p>W pliku <code>config.xml</code>można użyć następujące preferencje:</p>
+
+<pre><code>&lt;platform name=&quot;browser&quot;&gt;
+    &lt;preference name=&quot;SplashScreen&quot; value=&quot;images/browser/splashscreen.jpg&quot; /&gt; &lt;!-- defaults to &quot;images/fhapp-logo-128.png&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenDelay&quot; value=&quot;10000&quot; /&gt; &lt;!-- defaults to &quot;3000&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenBackgroundColor&quot; value=&quot;green&quot; /&gt; &lt;!-- defaults to &quot;#464646&quot; --&gt;
+    &lt;preference name=&quot;ShowSplashScreen&quot; value=&quot;false&quot; /&gt; &lt;!-- defaults to &quot;true&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenWidth&quot; value=&quot;600&quot; /&gt; &lt;!-- defaults to &quot;170&quot; --&gt;
+    &lt;preference name=&quot;SplashScreenHeight&quot; value=&quot;300&quot; /&gt; &lt;!-- defaults to &quot;200&quot; --&gt;
+&lt;/platform&gt;
+</code></pre>
+
+<h3 id="dziwactwaios">Dziwactwa iOS</h3>
+
+<ul>
+<li><p> <code>FadeSplashScreen</code> (wartość logiczna, domyślnie <code>true</code>): zestaw na <code>false</code> , aby zapobiec Znikająca i odkładane po zmianie stanu wyświetlania ekranu powitalnego.</p>
+
+<pre><code>&lt;preference name=&quot;FadeSplashScreen&quot; value=&quot;false&quot;/&gt;
+</code></pre></li>
+<li><p> <code>FadeSplashScreenDuration</code> (float, domyślnie <code>2</code>): określa liczbę sekund dla ekranu powitalnego zanikanie efekt do wykonać.</p>
+
+<pre><code>&lt;preference name=&quot;FadeSplashScreenDuration&quot; value=&quot;4&quot;/&gt;
+</code></pre></li>
+<li><p> <code>ShowSplashScreenSpinner</code> (wartość logiczna, domyślnie <code>true</code>): zestaw na <code>false</code> , aby ukryć pokrętła ekran powitalny.</p>
+
+<pre><code>&lt;preference name=&quot;ShowSplashScreenSpinner&quot; value=&quot;false&quot;/&gt;
+</code></pre></li>
+</ul>
+
+<h2 id="splashscreen.hide">splashscreen.Hide</h2>
+
+<p>Odrzucić ten opryskaæ têcza.</p>
+
+<pre><code>navigator.splashscreen.hide();
+</code></pre>
+
+<h3 id="jeżyna10wp8iosdziwactwo">Jeżyna 10, WP8, iOS dziwactwo</h3>
+
+<p>Plik <code>config.xml</code> <code>AutoHideSplashScreen</code> ustawienie musi być <code>false</code>. Opóźnienia, ukrywanie ekranu powitalnego przez dwie sekundy, dodać timer następujących w <code>deviceready</code> obsługa zdarzeń:</p>
+
+<pre><code>    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 2000);
+</code></pre>
+
+<h2 id="splashscreen.show">splashscreen.show</h2>
+
+<p>Wyświetla ekran powitalny.</p>
+
+<pre><code>navigator.splashscreen.show();
+</code></pre>
+
+<p>Aplikacja nie można wywołać <code>navigator.splashscreen.show()</code>, aż aplikacja została uruchomiona i zdarzenie <code>deviceready</code> został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w <code>pliku config.xml</code> będzie automatycznie <code>show</code> splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie <code>deviceready</code>. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz <a href="http://cordova.apache.org/docs/en/edge/config_ref_images.md.html">ikony i ekrany powitalne w aplikacjach</a>. Z tego powodu jest mało prawdopodobne, należy zadzwonić <code>navigator.splashscreen.show()</code>, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.</p>
+
+</body>
+</html>
+

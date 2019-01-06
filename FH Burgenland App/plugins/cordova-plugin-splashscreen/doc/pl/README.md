@@ -29,7 +29,7 @@ Ten plugin wyświetla i ukrywa ekran powitalny podczas uruchamiania aplikacji.
     cordova plugin add cordova-plugin-splashscreen
     // you may also install directly from this repo
     cordova plugin add https://github.com/apache/cordova-plugin-splashscreen.git
-    
+
 
 ## Obsługiwane platformy
 
@@ -54,7 +54,7 @@ W pliku `config.xml`musisz dodać następujące preferencje:
     <preference name="SplashScreen" value="foo" />
     <preference name="SplashScreenDelay" value="10000" />
     <preference name="SplashMaintainAspectRatio" value="true|false" />
-    
+
 
 Gdzie foo jest nazwą pliku ekranu powitalnego, najlepiej 9 łatce. Upewnij się dodać pliki splashcreen do katalogu res/xml w odpowiednich folderach. Drugi parametr reprezentuje, jak długo ekranu powitalnego pojawi się w milisekundach. Domyślnie 3000 ms. Aby uzyskać więcej informacji, zobacz [ikony i ekrany powitalne w aplikacjach](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html).
 
@@ -67,38 +67,38 @@ Plugin ładuje rozchlapać dolarowe, gdy zmienia orientację, tak można określ
 W pliku `config.xml`można użyć następujące preferencje:
 
     <platform name="browser">
-        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "img/logo.png" -->
+        <preference name="SplashScreen" value="images/browser/splashscreen.jpg" /> <!-- defaults to "images/fhapp-logo-128.png" -->
         <preference name="SplashScreenDelay" value="10000" /> <!-- defaults to "3000" -->
         <preference name="SplashScreenBackgroundColor" value="green" /> <!-- defaults to "#464646" -->
         <preference name="ShowSplashScreen" value="false" /> <!-- defaults to "true" -->
         <preference name="SplashScreenWidth" value="600" /> <!-- defaults to "170" -->
         <preference name="SplashScreenHeight" value="300" /> <!-- defaults to "200" -->
     </platform>
-    
+
 
 ### Dziwactwa iOS
 
   * `FadeSplashScreen` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby zapobiec Znikająca i odkładane po zmianie stanu wyświetlania ekranu powitalnego.
-    
+
         <preference name="FadeSplashScreen" value="false"/>
-        
+
 
   * `FadeSplashScreenDuration` (float, domyślnie `2`): określa liczbę sekund dla ekranu powitalnego zanikanie efekt do wykonać.
-    
+
         <preference name="FadeSplashScreenDuration" value="4"/>
-        
+
 
   * `ShowSplashScreenSpinner` (wartość logiczna, domyślnie `true`): zestaw na `false` , aby ukryć pokrętła ekran powitalny.
-    
+
         <preference name="ShowSplashScreenSpinner" value="false"/>
-        
+
 
 ## splashscreen.Hide
 
 Odrzucić ten opryskaæ têcza.
 
     navigator.splashscreen.hide();
-    
+
 
 ### Jeżyna 10, WP8, iOS dziwactwo
 
@@ -107,13 +107,13 @@ Plik `config.xml` `AutoHideSplashScreen` ustawienie musi być `false`. Opóźnie
         setTimeout(function() {
             navigator.splashscreen.hide();
         }, 2000);
-    
+
 
 ## splashscreen.show
 
 Wyświetla ekran powitalny.
 
     navigator.splashscreen.show();
-    
+
 
 Aplikacja nie można wywołać `navigator.splashscreen.show()`, aż aplikacja została uruchomiona i zdarzenie `deviceready` został zwolniony. Ale ponieważ zazwyczaj opryskać tęcza ma być widoczne przed rozpoczęciem aplikacji, wydaje się sprzeczne z celem ekranu powitalnego. Dostarczanie niektórych konfiguracji w `pliku config.xml` będzie automatycznie `show` splash na ekranie natychmiast po uruchomienie aplikacji i przed pełni rozpoczął i odebrał zdarzenie `deviceready`. Aby uzyskać więcej informacji na robienie tej konfiguracji, zobacz [ikony i ekrany powitalne w aplikacjach](http://cordova.apache.org/docs/en/edge/config_ref_images.md.html). Z tego powodu jest mało prawdopodobne, należy zadzwonić `navigator.splashscreen.show()`, aby wyświetlić ekran powitalny dla uruchamiania aplikacji.
