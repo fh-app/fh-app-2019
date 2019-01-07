@@ -6,7 +6,13 @@ routes = [
   {
     path: '/wegfinder/',
     name: 'wegfinder',
-    url:  './pages/wegfinder.html',
+    url: './pages/wegfinder.html',
+    on: {
+      pageInit: function (e, page) {
+        app.panel.close('left');
+
+      }
+    }
   },
 
   // Default route (404 page). MUST BE THE LAST

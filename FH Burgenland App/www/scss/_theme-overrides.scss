@@ -3,7 +3,9 @@
 		color: white;
 		background-color: $colMain;
 		font-size: 3em;
-
+		.item-media .icon {
+			color: white;
+		}
 		a {
 			color: white;
 		}
