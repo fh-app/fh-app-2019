@@ -64,7 +64,7 @@
 
 /* FH App styles */
 .fh-logo {
-	padding-right: 8px;
+	padding-left: 10px;
 	img {
 		height: 38px;
 	}
@@ -75,4 +75,15 @@
 	.md & {
 		background-color: $colMain;
 	}
+	.ios &,
+	.md & {
+		.item-media .icon {
+			color: white;
+		}
+
+		.title {
+			text-align: center;
+		}
+	}
+
 }

@@ -8,7 +8,7 @@ var app = new Framework7({
   name: 'FH Burgenland App', // App name
   theme: 'auto', // Automatic theme detection
   panel: {
-    swipe: 'left'
+    swipe: 'right'
   },
   // App root data
   data: function () {
