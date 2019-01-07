@@ -4,14 +4,9 @@ routes = [
     url: './index.html',
   },
   {
-    name: 'wegfinder',
     path: '/wegfinder/',
-    componentUrl: './pages/wegfinder.html',
-  },
-  {
-    name: 'about',
-    path: '/about/',
-    url: './pages/about.html',
+    name: 'wegfinder',
+    url:  './pages/wegfinder.html',
   },
 
   // Default route (404 page). MUST BE THE LAST
