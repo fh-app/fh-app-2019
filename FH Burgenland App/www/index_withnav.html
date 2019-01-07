@@ -27,8 +27,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline';img-src 'self' data:; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; media-src *" />
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -53,7 +52,7 @@
         <!-- Status bar overlay for fullscreen mode-->
         <div class="statusbar"></div>
         <!-- Left panel with cover effect-->
-        <div class="panel panel-left panel-cover">
+        <div class="panel panel-left panel-cover theme-light">
             <div class="view">
                 <div class="page">
                     <div class="navbar">
@@ -66,7 +65,7 @@
                             <div class="list">
                                 <ul>
                                     <li>
-                                        <a href="/wegfinder/" class="item-link item-content">
+                                        <a href="" class="item-link item-content">
                                             <div class="item-media">
                                                 <i class="icon f7-icons">placemark</i>
                                             </div>
@@ -123,17 +122,18 @@
             </div>
         </div>
 
-        <!-- Views container -->
-        <div class="views">
+        <!-- Views/Tabs container -->
+        <div class="views ios-edges">
 
-            <div id="viewMain" class="view view-main">
+            <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+            <div id="view-home" class="view view-main tab tab-active">
                 <!-- Page, data-name contains page name which can be used in page callbacks -->
                 <div class="page" data-name="home">
                     <!-- Top Navbar -->
                     <div class="navbar">
                         <div class="navbar-inner">
                             <div class="left">
-                                <a href="#" class="link icon-only panel-open">
+                                <a href="#" class="link icon-only panel-open" data-panel="left">
                                     <i class="icon f7-icons">menu</i>
                                 </a>
                             </div>
@@ -147,9 +147,11 @@
                     <!-- Scrollable page content-->
                     <div class="page-content">
                         <div class="block block-strong">
-                            <h1>Test</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias rem nulla consectetur, aut excepturi delectus dolor neque reiciendis similique totam quia nemo explicabo. Atque commodi numquam esse quas, natus sed.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, accusantium? Nulla voluptatem cumque eius quas id velit. Tempore, maxime quidem sapiente eaque sed ullam eos! Harum animi cum nostrum deserunt!</p>
+                            <h1>Test sss</h1>
+                            <p>This is an example of tabs-layout application. The main point of such tabbed layout is
+                                that each tab contains independent view with its own routing and navigation.</p>
+                            <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or
+                                static) or without navbar like this tab.</p>
                         </div>
 
                 </div>

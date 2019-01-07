@@ -4,6 +4,12 @@ routes = [
     url: './index.html',
   },
   {
+    name: 'wegfinder',
+    path: '/wegfinder/',
+    componentUrl: './pages/wegfinder.html',
+  },
+  {
+    name: 'about',
     path: '/about/',
     url: './pages/about.html',
   },

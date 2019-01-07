@@ -64,11 +64,15 @@
 
 /* FH App styles */
 .fh-logo {
+	padding-right: 8px;
 	img {
 		height: 38px;
 	}
 }
 
 .navbar {
-
+	.ios &,
+	.md & {
+		background-color: $colMain;
+	}
 }
