@@ -72,17 +72,37 @@
                             <div class="list">
                                 <ul>
                                     <li>
-                                        <a href="/wegfinder/" class="item-link item-content">
+                                        <a href="/" class="item-link item-content">
                                             <div class="item-media">
-                                                <i class="icon f7-icons">placemark</i>
+                                                <i class="icon f7-icons">home</i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title">Wegfinder</div>
+                                                <div class="item-title">Home</div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="item-link item-content">
+                                        <a href="/wegfindere/" class="item-link item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">placemark</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title">Wegfinder Eisenstadt</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/wegfinderp/" class="item-link item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons">placemark</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title">Wegfinder Pinkafeld</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/personen/" class="item-link item-content">
                                             <div class="item-media">
                                                 <i class="icon f7-icons">person</i>
                                             </div>
@@ -92,7 +112,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="item-link item-content">
+                                        <a href="/infos/" class="item-link item-content">
                                             <div class="item-media">
                                                 <i class="icon f7-icons">info</i>
                                             </div>
@@ -102,7 +122,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="item-link item-content">
+                                        <a href="/umgebungsplan/" class="item-link item-content">
                                             <div class="item-media">
                                                 <i class="icon f7-icons">navigation</i>
                                             </div>
@@ -112,7 +132,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" class="item-link item-content">
+                                        <a href="/mensa/" class="item-link item-content">
                                             <div class="item-media">
                                                 <i class="icon f7-icons">trash</i>
                                             </div>
@@ -146,22 +166,32 @@
                     <!-- Scrollable page content-->
                     <div class="page-content">
                         <div class="card">
-                            <div class="card-header">Aktionen</div>
+                            <div class="card-header">Angebot</div>
                             <div class="card-content">
                                 <div class="list media-list inset">
                                     <ul>
                                         <li>
-                                            <a href="/wegfinder/" class="item-link item-content">
+                                            <a href="/wegfindere/" class="item-link item-content">
                                                 <div class="item-media">
                                                     <i class="icon f7-icons">placemark</i>
                                                 </div>
                                                 <div class="item-inner">
-                                                    <div class="item-title">Wegfinder</div>
+                                                    <div class="item-title">Wegfinder Eisenstadt</div>
                                                 </div>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="item-link item-content">
+                                            <a href="/wegfinderp/" class="item-link item-content">
+                                                <div class="item-media">
+                                                    <i class="icon f7-icons">placemark</i>
+                                                </div>
+                                                <div class="item-inner">
+                                                    <div class="item-title">Wegfinder Pinkafeld</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/personen/" class="item-link item-content">
                                                 <div class="item-media">
                                                     <i class="icon f7-icons">person</i>
                                                 </div>
@@ -171,7 +201,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="item-link item-content">
+                                            <a href="/infos/" class="item-link item-content">
                                                 <div class="item-media">
                                                     <i class="icon f7-icons">info</i>
                                                 </div>
@@ -181,7 +211,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="item-link item-content">
+                                            <a href="/umgebungsplan/" class="item-link item-content">
                                                 <div class="item-media">
                                                     <i class="icon f7-icons">navigation</i>
                                                 </div>
@@ -191,7 +221,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="" class="item-link item-content">
+                                            <a href="/mensa/" class="item-link item-content">
                                                 <div class="item-media">
                                                     <i class="icon f7-icons">sort_round</i>
                                                 </div>
@@ -212,15 +242,15 @@
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
-
-    <!-- Framework7 library -->
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="framework7/js/framework7.js"></script>
-
-    <!-- App routes -->
+    <script src="js/pathfinder/astar.js"></script>
+    <script src="js/pathfinder/levels-e.js"></script>
+<!--     <script src="js/pathfinder/rooms-e.js"></script>
+ -->    <script src="js/pathfinder/stockwerke.js"></script>
+    <script src="js/pathfinder/map-search-e.js"></script>
     <script src="js/routes.js"></script>
-
-    <!-- Your custom app scripts -->
-    <script src="js/app.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
 
 </html>

@@ -2,16 +2,57 @@ routes = [
   {
     path: '/',
     url: './index.html',
+    name: 'home',
+    on: {
+      pageInit: closePanelLeft
+    }
   },
   {
-    path: '/wegfinder/',
-    name: 'wegfinder',
-    url: './pages/wegfinder.html',
+    path: '/wegfindere/',
+    name: 'wegfindere',
+    url: './pages/wegfindere.html',
     on: {
-      pageInit: function (e, page) {
-        app.panel.close('left');
-
-      }
+      pageInit: initPathfinder
+    }
+  },
+  {
+    path: '/wegfinderp/',
+    name: 'wegfinderp',
+    url: './pages/wegfinderp.html',
+    on: {
+      pageInit: closePanelLeft
+    }
+  },
+  {
+    path: '/personen/',
+    name: 'personen',
+    url: './pages/personen.html',
+    on: {
+      pageInit: closePanelLeft
+    }
+  },
+  {
+    path: '/infos/',
+    name: 'infos',
+    url: './pages/infos.html',
+    on: {
+      pageInit: closePanelLeft
+    }
+  },
+  {
+    path: '/umgebungsplan/',
+    name: 'umgebungsplan',
+    url: './pages/umgebungsplan.html',
+    on: {
+      pageInit: closePanelLeft
+    }
+  },
+  {
+    path: '/mensa/',
+    name: 'mensa',
+    url: './pages/mensa.html',
+    on: {
+      pageInit: closePanelLeft
     }
   },
 
@@ -21,3 +62,15 @@ routes = [
     url: './pages/404.html',
   },
 ];
+
+function closePanelLeft(e, page) {
+  app.panel.close('left');
+}
+
+function initPathfinder() {
+  closePanelLeft();
+  var pfe = new mapSearchEisenstadt();
+  console.log(pfe);
+
+
+}

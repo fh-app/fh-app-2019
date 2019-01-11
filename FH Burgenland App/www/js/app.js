@@ -7,9 +7,6 @@ var app = new Framework7({
   id: 'at.fhburgenland.app', // App bundle ID
   name: 'FH Burgenland App', // App name
   theme: 'auto', // Automatic theme detection
-  panel: {
-    swipe: 'right'
-  },
   // App root data
   data: function () {
 
