@@ -272,7 +272,7 @@ var mapSearchEisenstadt = function () {
                     setTimeout(function () {
                         punkt = getPoint(ind, resultLength, stairs, building);
                         gridElems[st][result[ind].x][result[ind].y].classList.add(wayPoint(), punkt);
-                    }, 100 * ind);
+                    }, 60 * ind);
                 }(i));
             } else {
                 punkt = getPoint(i, resultLength, stairs, building);
@@ -478,7 +478,7 @@ var mapSearchEisenstadt = function () {
     }
 
     function searchEndpoint(start_res, end_res) {
-        var aniBool = false;
+        var aniBool = true;
 
 
         initPathStartEnd(start_res[0], start_res[1], start_res[2], end_res[0], end_res[1], end_res[2], aniBool);
@@ -526,7 +526,7 @@ var mapSearchEisenstadt = function () {
         }
     }
 
-    function processData(data) {
+    function processData() {
         var dataListStart,
             dataListEnd,
             caption1 = '',
@@ -535,9 +535,7 @@ var mapSearchEisenstadt = function () {
             caption4 = '',
             first = true,
             rowNr = 0,
-          //  levelsE,
-            level = '',
-            url;
+            level = '';
 
         dataListStart = document.getElementById("room-list-start-e");
         dataListEnd = document.getElementById("room-list-end-e");
@@ -575,14 +573,6 @@ var mapSearchEisenstadt = function () {
             dataListStart.innerHTML += '<option value=' + currentLevel[1] + "," + currentLevel[3] + "," + currentLevel[2] + '>' + currentLevel[0] + '</option>';
             dataListEnd.innerHTML += '<option value=' + currentLevel[1] + "," + currentLevel[3] + "," + currentLevel[2] + '>' + currentLevel[0] + '</option>';
         }
-
-        //prüfen, ob es im Parameter ?-> gibt!
-        //dann loop über alle einträge UND die selektierten setzen
-        url = window.location.href;
-
-        if (url.indexOf('?') !== -1) {
-            initSearchFields();
-        }
     }
 
     function checkStartAndEnd(ev) {
@@ -605,48 +595,18 @@ var mapSearchEisenstadt = function () {
             alert("Der Start- und Zielraum sind ident! Bitte zwei unterschiedliche Räume wählen!");
         } else {
             searchEndpoint(startPoint.split(delimiterComma()), endPoint.split(delimiterComma()));
-            //window.location.href = "indoornavi-map.html?start=" + startPoint + "&end=" + endPoint + "&ani=" + animation.checked;
-           // window.location.href = strHTML + startPoint + "&end=" + endPoint + "&ani=true"; // + animation.checked;
         }
     }
 
     var init = function () {
         var btnSearchE = $('#btnSearchE');
         btnSearchE.on('click touchend', checkStartAndEnd)
-
-        $.ajax({
-            type: "GET",
-            url: "js/pathfinder/raumliste-eisenstadt.csv",
-            dataType: "text",
-            success: function (data) {
-                processData(data);
-                initMaps(groundFloor());
-            }
-        });
+        processData();
+        initMaps(groundFloor());
     }
-   /*  $(document).ready(function () {
-        var url = window.location.href;
-
-        if (url.indexOf('?') !== -1) {
-            searchEndpoint();
-        } else {
-            initMaps(groundFloor());
-        }
-    }); */
 
     init();
     return {
         search: searchEndpoint
     };
-
-    /* // Übermittelter Wert aus URL wird an die function initPath übergeben
-    $.urlParam = function (name) {
-        var results = new RegExp(regExp1() + name + regExp2()).exec(window.location.href);
-
-        if (results === null) {
-            return null;
-        } else {
-            return results[1] || 0;
-        }
-    }; */
 }
