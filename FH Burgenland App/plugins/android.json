@@ -1,0 +1,40 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-device-motion": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "at.fhburgenland.app"
+    }
+  }
+}
