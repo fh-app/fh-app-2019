@@ -1,11 +1,31 @@
-routes = [
-  {
+routes = [{
     path: '/',
     url: './index.html',
     name: 'home',
     on: {
       pageInit: closePanelLeft
     }
+  },
+  {
+    path: '/cis/',
+    componentUrl: './pages/cis.html',
+    beforeEnter: function (routeTo, routeFrom, resolve, reject) {
+      if (true) {
+        console.log('beforeEnter');
+
+        resolve();
+      } else {
+        console.log('reject');
+
+        // don't allow to visit this page for unauthenticated users
+        reject();
+      }
+    }
+  },
+  {
+    path: '/login/',
+    name: 'login',
+    componentUrl: './pages/login-screen.html',
   },
   {
     path: '/wegfindere/',
@@ -63,14 +83,24 @@ routes = [
   },
 ];
 
+/**
+ * Closes Left Panel
+ * @param Event e
+ * @param string page
+ */
 function closePanelLeft(e, page) {
   app.panel.close('left');
 }
 
+/**
+ * Initializes Pathfinder
+ */
 function initPathfinder() {
   closePanelLeft();
   var pfe = new mapSearchEisenstadt();
-  console.log(pfe);
+}
 
-
+function checkLogin() {
+  console.log('jipie');
+  return false;
 }

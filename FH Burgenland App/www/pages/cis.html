@@ -1,5 +1,5 @@
 <template>
-	<div class="page" data-name="infos">
+	<div class="page">
 		<!-- Top Navbar -->
 		<div class="navbar">
 			<div class="navbar-inner">
@@ -10,7 +10,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="title sliding">Infos</div>
+				<div class="title sliding">{{title}}</div>
 				<div class="right">
 					<a href="#" class="link icon-only panel-open">
 						<i class="icon f7-icons">menu</i>
@@ -19,12 +19,33 @@
 			</div>
 		</div>
 		<div class="page-content">
-			<div class="block-title">Infos</div>
+			<div class="block-title"></div>
 			<div class="block block-strong">
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorum alias sequi dignissimos, nobis suscipit,
 					similique sunt vel rem nulla eligendi est exercitationem, quasi eos cumque iure quas quidem. Ad.</p>
 			</div>
 		</div>
 	</div>
-	</div>
 </template>
+<script>
+	// script must return component object
+	return {
+		data: function () {
+			return {
+				title: 'Mein CIS'
+			}
+		},
+		methods: {
+			openAlert: function () {
+				var self = this.$app.dialog.alert('Hello world!');
+			},
+		},
+		on: {
+			pageInit: function () {
+				console.log('init');
+
+				app.views.main.router.navigate('login');
+			},
+		}
+	}
+</script>

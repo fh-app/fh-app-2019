@@ -11,13 +11,6 @@ var app = new Framework7({
   data: function () {
 
   },
-  // App root methods
-  methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
-    }
-  },
-  // App routes
   routes: routes
 });
 
