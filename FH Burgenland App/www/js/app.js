@@ -7,33 +7,61 @@ var app = new Framework7({
   id: 'at.fhburgenland.app', // App bundle ID
   name: 'FH Burgenland App', // App name
   theme: 'auto', // Automatic theme detection
-  // App root data
-  data: function () {
-
-  },
-  routes: routes
+  routes: routes,
+  dialog: {
+    // set default title for all dialog shortcuts
+    title: 'FH Burgenland App',
+    // change default "OK" button text
+    buttonCancel: 'Abbrechen',
+    usernamePlaceholder: 'E-Mail',
+    passwordPlaceholder: 'Passwort',
+    preloaderTitle: 'Lädt ...',
+    progressTitle: 'Lädt ...'
+  }
 });
 
+////////// Globally accessable Data
+var appData = {
+  loginPath: 'https://fh-app-backend.loc/fhapp-ajax-login-test.php'
+};
 // Init/Create views
-var homeView = app.views.create('#viewMain', {
+var mainView = app.views.create('#viewMain', {
   url: '/'
 });
-/*
-var catalogView = app.views.create('#view-catalog', {
-  url: '/catalog/'
-});
-var settingsView = app.views.create('#view-settings', {
-  url: '/settings/'
-});
 
-// Login Screen Demo
-$$('#my-login-screen .login-button').on('click', function () {
-  var username = $$('#my-login-screen [name="username"]').val();
-  var password = $$('#my-login-screen [name="password"]').val();
 
-  // Close login screen
-  app.loginScreen.close('#my-login-screen');
 
-  // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
-}); */
+//////////// HELPERS
+function fhAppNotify(title, msg, navigateTo) {
+  var notification = app.notification.create({
+    title: title,
+    text: msg,
+    closeButton: true,
+    closeOnClick: true,
+    on: {
+      closed: function () {
+        if (!navigateTo) return;
+        mainView.router.navigate(navigateTo);
+      }
+    }
+  });
+  notification.open();
+}
+
+function testJSON(text){
+  if (typeof text!=="string"){
+      return false;
+  }
+  try{
+      JSON.parse(text);
+      return true;
+  }
+  catch (error){
+      return false;
+  }
+}
+
+function fhAppLoginHelper() {
+
+}
+

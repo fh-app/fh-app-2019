@@ -1,0 +1,77 @@
+<template>
+	<div class="page">
+		<!-- Top Navbar -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="left">
+					<a href="#" class="link back">
+						<div class="item-media">
+							<i class="icon f7-icons">arrow_left</i>
+						</div>
+					</a>
+				</div>
+				<div class="title sliding">{{title}}</div>
+				<div class="right">
+					<a href="#" class="link icon-only panel-open">
+						<i class="icon f7-icons">menu</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="page-content">
+			<div class="block-title"></div>
+			<div class="block block-strong">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dolorum alias sequi dignissimos, nobis suscipit,
+					similique sunt vel rem nulla eligendi est exercitationem, quasi eos cumque iure quas quidem. Ad.</p>
+			</div>
+		</div>
+	</div>
+</template>
+<script>
+	// script must return component object
+	return {
+		data: function () {
+			return {
+				title: 'Meine Noten'
+			}
+		},
+		on: {
+			pageBeforeIn: function (e, page) {
+				$$('.spinner-overlay').show();
+				app.request.post(appData.loginPath, {
+						token: '12345678'
+					},
+					function (data) {
+						if (typeof data !== "string") {
+							// TODO: Error Handling
+							console.log('error:', 'Kein String');
+
+							$$('.spinner-overlay').hide();
+							return false;
+						}
+
+						try {
+							JSON.parse(data);
+							console.log('success:', data);
+							$$('.spinner-overlay').hide();
+							return true;
+						} catch (error) {
+							// TODO: Error Handling
+							$$('.spinner-overlay').hide();
+							console.log('error:', error);
+							return false;
+						}
+					},
+					function (xhr, status) {
+						console.log('error', status);
+
+					});
+			},
+			pageAfterIn: function () {
+				//app.views.main.router.navigate({name: 'login'});
+
+
+			},
+		}
+	}
+</script>

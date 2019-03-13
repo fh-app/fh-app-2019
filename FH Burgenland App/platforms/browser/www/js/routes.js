@@ -1,4 +1,5 @@
-routes = [{
+routes = [
+  {
     path: '/',
     url: './index.html',
     name: 'home',
@@ -9,23 +10,15 @@ routes = [{
   {
     path: '/cis/',
     componentUrl: './pages/cis.html',
-    beforeEnter: function (routeTo, routeFrom, resolve, reject) {
-      if (true) {
-        console.log('beforeEnter');
-
-        resolve();
-      } else {
-        console.log('reject');
-
-        // don't allow to visit this page for unauthenticated users
-        reject();
-      }
-    }
+  },
+  {
+    path: '/noten/',
+    componentUrl: './pages/noten.html',
   },
   {
     path: '/login/',
     name: 'login',
-    componentUrl: './pages/login-screen.html',
+    componentUrl: './pages/login-screen-page.html',
   },
   {
     path: '/wegfindere/',
@@ -75,7 +68,6 @@ routes = [{
       pageInit: closePanelLeft
     }
   },
-
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
