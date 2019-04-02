@@ -36,6 +36,8 @@ var mapSearchEisenstadt = function () {
     var gridElems = [],
         g = 0;
 
+    var selectStart, selectEnd; // selectize Objekte
+
     /* Konstanten - Start */
     function pointStart() {
         return 'start';
@@ -500,7 +502,7 @@ var mapSearchEisenstadt = function () {
         endID = "room-list-end-e";
 
         startSelect = document.getElementById(startID);
-        startRes = $.urlParam("start");
+        startRes = '0,5,15'; // Haupteingang
 
         for (i = 0; i < startSelect.options.length; i = i + 1) {
             optStart = startSelect.options[i];
@@ -513,7 +515,7 @@ var mapSearchEisenstadt = function () {
         }
 
         endSelect = document.getElementById(endID);
-        endRes = $.urlParam("end");
+        endRes = '0,5,15'; // Haupteingang
 
         for (j = 0; j < endSelect.options.length; j = j + 1) {
             optEnd = endSelect.options[j];
@@ -539,6 +541,8 @@ var mapSearchEisenstadt = function () {
 
         dataListStart = document.getElementById("room-list-start-e");
         dataListEnd = document.getElementById("room-list-end-e");
+        dataListStart.innerHTML += '<option value="">Wählen oder Nummer eingeben</option>';
+        dataListEnd.innerHTML += '<option value="">Wählen oder Nummer eingeben</option>';
 
         for (rowNr = 0; rowNr < levelsE.length; rowNr++) {
             var currentLevel = levelsE[rowNr];
@@ -583,6 +587,7 @@ var mapSearchEisenstadt = function () {
         startPoint = document.getElementById("room-list-start-e").value;
         endPoint = document.getElementById("room-list-end-e").value;
         //animation = document.getElementById("animation");
+console.log(startPoint, endPoint);
 
 
         if (startPoint === strUndefined && endPoint === strUndefined) {
@@ -599,10 +604,16 @@ var mapSearchEisenstadt = function () {
     }
 
     var init = function () {
+
         var btnSearchE = $('#btnSearchE');
         btnSearchE.on('click touchend', checkStartAndEnd)
         processData();
         initMaps(groundFloor());
+        // selectize initialisieren
+
+        selcteStart = $('#room-list-start-e');
+        .selectize();
+        $('#room-list-end-e').selectize();
     }
 
     init();
