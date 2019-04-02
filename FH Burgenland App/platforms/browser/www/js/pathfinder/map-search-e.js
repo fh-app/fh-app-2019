@@ -587,7 +587,6 @@ var mapSearchEisenstadt = function () {
         startPoint = document.getElementById("room-list-start-e").value;
         endPoint = document.getElementById("room-list-end-e").value;
         //animation = document.getElementById("animation");
-console.log(startPoint, endPoint);
 
 
         if (startPoint === strUndefined && endPoint === strUndefined) {
@@ -611,9 +610,10 @@ console.log(startPoint, endPoint);
         initMaps(groundFloor());
         // selectize initialisieren
 
-        selcteStart = $('#room-list-start-e');
-        .selectize();
-        $('#room-list-end-e').selectize();
+        selecteStart = $('#room-list-start-e');
+        selectStart.selectize();
+        selectEnd = $('#room-list-end-e');
+        selectEnd.selectize();
     }
 
     init();
