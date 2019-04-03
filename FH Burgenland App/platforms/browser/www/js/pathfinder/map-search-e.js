@@ -610,7 +610,7 @@ var mapSearchEisenstadt = function () {
         initMaps(groundFloor());
         // selectize initialisieren
 
-        selecteStart = $('#room-list-start-e');
+        selectStart = $('#room-list-start-e');
         selectStart.selectize();
         selectEnd = $('#room-list-end-e');
         selectEnd.selectize();
