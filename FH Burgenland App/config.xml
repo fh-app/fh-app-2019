@@ -1,26 +1,16 @@
-<?xml version='1.1.2-alpha' encoding='utf-8'?>
-<widget id="at.fhburgenland.app" version="1.1.2-alpha" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="at.fhburgenland.app" version="1.0.3-alpha" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>FH Burgenland App</name>
     <description>
-        Die App die verbindet
+        Die App, die Besonderes zusammen bringt. Die FH Burgenland App unterstützt StudentInnen und LektorInnen im FH-Alltag mit praktischen Funktionen.
     </description>
-    <author email="fh.burgenland.app@gmail.com" href="https://fh-burgenland.at">
-        FH App Team
-    </author>
     <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
+    <access origin="*" />
     <preference name="android-minSdkVersion" value="22" />
-
-    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
-    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
-    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-     <preference name="permissions" value="none"/>
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="FadeSplashScreenDuration" value="0" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.2" />
+    <preference name="permissions" value="none" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -40,9 +30,7 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
-
     </platform>
-
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
@@ -78,4 +66,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <engine name="android" spec="~7.1.4" />
 </widget>
