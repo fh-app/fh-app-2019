@@ -10272,6 +10272,14 @@
 		"oAP": "/pages/wegfinderp.html",
 		"oF": 0
 		},
+	"/res.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/res.zip",
+		"oF": 0
+		},
 	"/res/.pgbomit": {
 		"cB": 0,
 		"ft": 8192,
@@ -10522,171 +10530,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/res/icon/windows/Square150x150Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 21270,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square150x150Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square150x150Logo.scale-240.png": {
-		"ft": 32768,
-		"iS": 22932,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square150x150Logo.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square30x30Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 1924,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square30x30Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square310x310Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 59558,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square310x310Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square44x44Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 3369,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square44x44Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square44x44Logo.scale-240.png": {
-		"ft": 32768,
-		"iS": 6408,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square44x44Logo.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square70x70Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 7178,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square70x70Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square71x71Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 3681,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square71x71Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Square71x71Logo.scale-240.png": {
-		"ft": 32768,
-		"iS": 11120,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Square71x71Logo.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/StoreLogo.scale-100.png": {
-		"ft": 32768,
-		"iS": 4147,
-		"oA": 0,
-		"oAP": "/res/icon/windows/StoreLogo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/StoreLogo.scale-240.png": {
-		"ft": 32768,
-		"iS": 6979,
-		"oA": 0,
-		"oAP": "/res/icon/windows/StoreLogo.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Wide310x150Logo.scale-100.png": {
-		"ft": 32768,
-		"iS": 12397,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Wide310x150Logo.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/windows/Wide310x150Logo.scale-240.png": {
-		"ft": 32768,
-		"iS": 29614,
-		"oA": 0,
-		"oAP": "/res/icon/windows/Wide310x150Logo.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/wp8/ApplicationIcon.png": {
-		"ft": 32768,
-		"iS": 12748,
-		"oA": 0,
-		"oAP": "/res/icon/wp8/ApplicationIcon.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/icon/wp8/Background.png": {
-		"ft": 32768,
-		"iS": 24685,
-		"oA": 0,
-		"oAP": "/res/icon/wp8/Background.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
 	"/res/screen/android/drawable-land-hdpi-screen.png": {
 		"ft": 32768,
 		"iS": 60267,
@@ -10927,39 +10770,6 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
-		"q": 100
-		},
-	"/res/screen/windows/SplashScreen.scale-100.png": {
-		"ft": 32768,
-		"iS": 38915,
-		"oA": 0,
-		"oAP": "/res/screen/windows/SplashScreen.scale-100.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/screen/windows/SplashScreenPhone.scale-240.png": {
-		"ft": 32768,
-		"iS": 247521,
-		"oA": 0,
-		"oAP": "/res/screen/windows/SplashScreenPhone.scale-240.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"/res/screen/wp8/screen-portrait.jpg": {
-		"ft": 16384,
-		"iS": 56486,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "/res/screen/wp8/screen-portrait.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
 		"q": 100
 		},
 	"/scss/_init.scss": {
